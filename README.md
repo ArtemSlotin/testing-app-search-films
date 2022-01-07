@@ -1,24 +1,12 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
+### `tasks`
+You should create a React app to search for movies within the https://www.omdbapi.com/ database based on movie title(API key can be obtained for free).
+The app should have a search field, search button, and reset button
+The initial search results should display the Poster image, Title, Release year, and Media type (Poster and title should be clickable and should lead to a detail page), and the button “Watch later”
+The initial search results should show the total number of results and also allow for pagination (10 films per page)
+The Detail page should contain all available information for the selected movie/series and a Back button which will lead back to the initial search result, and a button “Watch later”
+For the design of the app, you can use any library that you are comfortable with (bootstrap, foundation, ant design, etc.)
+We would like to view your progress on your repository of choice (GitHub, Bitbucket, etc.)
+You can use any libraries from NPM.
 ### `npm run build`
 
 Builds the app for production to the `build` folder.\
@@ -68,3 +56,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
