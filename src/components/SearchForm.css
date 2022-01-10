@@ -1,0 +1,13 @@
+input {
+  /* background: #696969; */
+  outline: none;
+  color: darkblue;
+  width: 50vw;
+}
+
+.search-btn {
+  color:#FFFFFF;
+  background:#4eb5f1;
+  text-align:center;
+  transition: all 0.2s;
+}

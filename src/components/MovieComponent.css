@@ -1,0 +1,9 @@
+.movie-element {
+  background: rgb(221, 222, 223);
+  margin: 20px;
+  color: black;
+}
+.movie-container {
+  background: red;
+  height: 100vh;
+}
