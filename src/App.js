@@ -6,6 +6,7 @@
 
   function App() {
     const [movies, setMovies] = useState([]);
+
     
   return (
     <div className="App">

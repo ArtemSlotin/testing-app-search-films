@@ -7,19 +7,16 @@ const [inputValue, setInputValue] = useState('');
 const [goSearch, setGoSearch] = useState(false);
 
   function handlerSearch() {
-    console.log(goSearch);
-    console.log(inputValue);
     setGoSearch(true);
     axios.get(`http://www.omdbapi.com/?s=${inputValue}&apikey=3d3fe426`)
     .then((result) => {setMovies(result.data.Search)})
     .finally(()=>{
       setGoSearch(false);
     })
-    // updateInputValue(document.querySelector('.search').value ?? '');
   }
 
   const handleChange = (event) => {
-    setInputValue(event.target.value)
+    setInputValue(event.target.value);
   }
 
   useEffect(() => {

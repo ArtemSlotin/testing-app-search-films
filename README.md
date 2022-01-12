@@ -1,7 +1,12 @@
 ### `tasks`
 You should create a React app to search for movies within the https://www.omdbapi.com/ database based on movie title(API key can be obtained for free).
 The app should have a search field, search button, and reset button
-The initial search results should display the Poster image, Title, Release year, and Media type (Poster and title should be clickable and should lead to a detail page), and the button “Watch later”
+The initial search results should display the 
+Poster image, 
+Title, 
+Release year, and
+ Media type (Poster and title should be clickable and should lead to a detail page), and the button
+  “Watch later”
 The initial search results should show the total number of results and also allow for pagination (10 films per page)
 The Detail page should contain all available information for the selected movie/series and a Back button which will lead back to the initial search result, and a button “Watch later”
 For the design of the app, you can use any library that you are comfortable with (bootstrap, foundation, ant design, etc.)

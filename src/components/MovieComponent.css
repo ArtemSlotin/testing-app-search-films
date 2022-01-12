@@ -1,9 +1,64 @@
+.title {
+  margin: 5px 10px;
+  font-weight: bold;
+  line-height: 1;
+  height: 45px;
+}
+
+p {
+  margin: 0px 10px;
+}
+
+.fa-clock {
+  margin-top: 10px;
+  margin: 10px 10px 0px 10px;
+}
+
 .movie-element {
-  background: rgb(221, 222, 223);
+  border-radius: 10px;
+  background-color: #F0FFFF;
   margin: 20px;
   color: black;
+  height: 400px;
+  width: 185px;
+  overflow: hidden;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s ease-in-out;
+  box-shadow: 16px 16px 16px -4px rgba(0, 0, 0, 0.21);
 }
+
+.movie-element:active {
+  transition: 0.2s ease-in-out;
+  box-shadow: 6px 8px 10px -3px rgba(3,3,3,0.41);
+}
+
 .movie-container {
-  background: red;
   height: 100vh;
+  display: flex;
+  background-color: #fff;
 }
+
+
+.movie-poster {
+  height: 255px;
+  width: 185px; 
+  transition: 500ms;
+  cursor: pointer;
+
+}
+
+.movie-poster:hover {
+  transition: 500ms;
+}
+
+.movie-poster:active {
+  transition: 500ms;
+  transform: scaleX(-1);
+  opacity: 0.5;
+}
+
+.far .fa-clock .fa-2x {
+  font-size: 25px;
+}
+
