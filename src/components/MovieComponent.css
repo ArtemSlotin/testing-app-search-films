@@ -1,12 +1,28 @@
 .title {
+  display: block;
   margin: 5px 10px;
   font-weight: bold;
   line-height: 1;
-  height: 45px;
+  height: 40px;
+  width: 165px;
+  font-size: 14px;
+  overflow: hidden; 
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.title:active {
+  overflow:visible;
+  text-overflow:unset;
+  white-space: normal;
 }
 
 p {
   margin: 0px 10px;
+}
+
+.movie-describe {
+  display: flex;
 }
 
 .fa-clock {
@@ -15,12 +31,14 @@ p {
 }
 
 .movie-element {
-  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
   background-color: #F0FFFF;
-  margin: 20px;
+  margin: 15px 30px;
   color: black;
-  height: 400px;
-  width: 185px;
+  height: 350px;
+  width: 175px;
   overflow: hidden;
   cursor: pointer;
   font-size: 16px;
@@ -34,15 +52,21 @@ p {
 }
 
 .movie-container {
+  margin: 15px 40px;
+  padding: 0px 40px;
+  border-radius: 15px;
   height: 100vh;
   display: flex;
+  flex-wrap: wrap;
+  overflow:hidden;
+  width: 90%;
   background-color: #fff;
 }
 
 
 .movie-poster {
-  height: 255px;
-  width: 185px; 
+  height: 250px;
+  width: 175px; 
   transition: 500ms;
   cursor: pointer;
 
@@ -61,4 +85,3 @@ p {
 .far .fa-clock .fa-2x {
   font-size: 25px;
 }
-
