@@ -3,7 +3,7 @@ import './SearchForm.css';
 import axios from "axios";
 
 const SearchForm = ({setMovies, setTotalResults, currentPage}) => {
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState('Artem');
   const [goSearch, setGoSearch] = useState(false);
   console.log(currentPage)
 

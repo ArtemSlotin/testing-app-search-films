@@ -1,10 +1,11 @@
   import React, {useState} from "react";
-  import './App.css';
   import ReactPaginate from 'react-paginate';
 
+
+  import './App.css';
+
   import SearchForm from './components/SearchForm.jsx';
-  import MovieComponent from "./components/MovieComponent";
-  // import Pagination from "./components/Pagination.jsx";
+  import MovieComponent from './components/MovieComponent.jsx';
 
   function App() {
     const [movies, setMovies] = useState([]);
