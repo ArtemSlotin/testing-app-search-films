@@ -7,7 +7,7 @@
   import SearchForm from './SearchForm.jsx';
   import MovieComponent from './MovieComponent.jsx';
 
-  function Layout() {
+  const Layout = () =>  {
     const [movies, setMovies] = useState([]);
     const [loading, setLoading] = useState(false);
     const [totalResults, setTotalResults] = useState(0);
@@ -17,10 +17,9 @@
 
    const  handlePageClick = (e) => {
       setCurrentPage(e.selected + 1);   
-  };
+    };
 
   console.log(movies);
-    const pageCounts = totalResults / moviesPerPage;
   return (
     <div className="Layout">
       <h1>Search movie app</h1>
@@ -36,7 +35,7 @@
                     breakClassName={"break-me"}
                     activeClassName={"active"}
                     subContainerClassName={"pages pagination justify-content-end"}
-                    pageCount={pageCounts}
+                    pageCount={Math.ceil(totalResults / moviesPerPage)}
                     breakLabel={"..."}
                     onPageChange={handlePageClick}
                     renderOnZeroPageCount={null}
@@ -45,4 +44,4 @@
   );
 }
 
-export default Layout;
+export {Layout};
