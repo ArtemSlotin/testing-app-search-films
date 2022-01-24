@@ -12,12 +12,16 @@ const MovieComponent = (props) => {
   const [selectItem, setSelectItem] = useState();
   const [detailItem, setDetailItem] = useState([]);
 
-
  
   function changeClass (props) {
-    setAddToWatchList(!addToWatchList)
-    console.log('This is ', addToWatchList);
-    console.log('This is ', props.imdbID);
+    if(!watchList.includes(props.imdbID)) {
+      watchList.push(props.imdbID)
+    } else if (watchList.includes(props.imdbID)) {
+      watchList.pop(props.imdbID)
+    }
+
+    localStorage.setItem('watchList', JSON.stringify(watchList))
+    
     // if(event.target.className == 'far fa-clock fa-2x') {
     //   event.target.className ='fas fa-clock fa-2x';
     // } else {
@@ -32,14 +36,9 @@ const MovieComponent = (props) => {
   useEffect(() => {
       axios.get(`http://www.omdbapi.com/?_limit=20&i=${selectItem}&apikey=3d3fe426`)
       .then((result) => {
-        console.log('this is result from ID: ', result.data);
         setDetailItem(result.data);
       })
   }, [selectItem])
-
-  useEffect(() => {
-    console.log(' Actors from films ', detailItem);
-  }, [detailItem])
 
   
  

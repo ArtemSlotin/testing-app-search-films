@@ -19,12 +19,11 @@
       setCurrentPage(e.selected + 1);   
     };
 
-  console.log(movies);
   return (
     <div className="Layout">
       <h1>Search movie app</h1>
       <SearchForm setMovies={setMovies} currentPage={currentPage} setTotalResults={setTotalResults}/>
-      {(totalResults ==  0) ? <h2>По вашому запиту нічого не знайдено</h2> : <h5>Загальні результати пошуку:   {totalResults} фільмів</h5>}
+      {(totalResults ==  0) ? <h2>Your search did not match any results</h2> : <h5>Total search:   {totalResults} films</h5>}
       {movies && movies.length > 0 && <MovieComponent movies={movies}/>}
       <ReactPaginate
                     previousLabel={"<<"}

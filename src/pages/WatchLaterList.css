@@ -1,0 +1,10 @@
+body {
+  background-color: white;
+}
+
+.watch_list {
+  height: 300px;
+  width: 300px;
+  color: rgb(0, 0, 0);
+  background-color: green;
+}

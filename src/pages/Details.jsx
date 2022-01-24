@@ -15,7 +15,6 @@ const Details = () => {
     axios.get(`http://www.omdbapi.com/?_limit=20&i=${id}&apikey=3d3fe426`)
     .then((result) => {
       setDetails(result.data)
-      console.log(result.data);
     })
 }, [])
 
