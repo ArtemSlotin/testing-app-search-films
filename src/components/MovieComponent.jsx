@@ -11,16 +11,31 @@ const MovieComponent = (props) => {
   const [addToWatchList, setAddToWatchList] = useState(false);
   const [selectItem, setSelectItem] = useState();
   const [detailItem, setDetailItem] = useState([]);
+  const arr = []
+
+  // function filmsData (){
+  //   watchList.map((id) => {
+  //     axios.get(`http://www.omdbapi.com/?_&i=${id}&apikey=3d3fe426`)
+  //     .then((result) => {
+  //       arr.push(result.data)
+  //       console.log(arr);
+  //     })
+  //   })
+  // } 
 
  
-  function changeClass (props) {
-    if(!watchList.includes(props.imdbID)) {
-      watchList.push(props.imdbID)
-    } else if (watchList.includes(props.imdbID)) {
-      watchList.pop(props.imdbID)
+  function addToList (props) {
+    alert(JSON.stringify(props))
+    alert(!watchList.includes(props))
+    if(!watchList.includes(props)) {
+      watchList.push(props)
+    } else if (watchList.includes(props)) {
+      watchList.pop(props)
     }
+    console.log(watchList)
+    localStorage.setItem('filmsData', JSON.stringify(watchList))
 
-    localStorage.setItem('watchList', JSON.stringify(watchList))
+
     
     // if(event.target.className == 'far fa-clock fa-2x') {
     //   event.target.className ='fas fa-clock fa-2x';
@@ -28,6 +43,11 @@ const MovieComponent = (props) => {
     //   event.target.className ='far fa-clock fa-2x';
     // }  
   }
+
+  useEffect(() => {
+   
+
+  }, [arr])
 
   function handleClickLink(elem) {
     setSelectItem(elem);
@@ -60,7 +80,7 @@ const MovieComponent = (props) => {
                 <p>{elem.Year}</p>
                 <p>{elem.Type}</p>
               </div>
-              <i onClick={()=> changeClass(elem)} imdbID={elem.imdbID} className={`${toggle == 'far' ? 'fas' : 'far'} fa-clock fa-2x`}></i>
+              <i onClick={()=> addToList(elem)} imdbID={elem.imdbID} className={`${toggle == 'far' ? 'fas' : 'far'} fa-clock fa-2x`}></i>
             </div>
           </div>
         </div>

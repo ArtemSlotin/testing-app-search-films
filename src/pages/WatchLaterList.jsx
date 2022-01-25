@@ -1,40 +1,40 @@
 import React from "react";
-import axios from "axios";
-// import { Link } from "react-router-dom";
-// import { DetailsContainer } from '../components/DetailsContainer';
-
 
 import '../pages/WatchLaterList.css'
+
+
 const WatchLaterList = () => {
-  const elem = [];
-
-  let retrievedData = localStorage.getItem('watchList');
+ 
+  let retrievedData = localStorage.getItem('filmsData');
   let watchList = JSON.parse(retrievedData);
-
-  const render = watchList.map(((id) => {
-    axios.get(`http://www.omdbapi.com/?_&i=${id}&apikey=3d3fe426`)
-    .then((result) => {
-      elem.push(result.data)
-      console.log(elem);
-
-      })
-  }))
+  // setFilms(watchList)
+ 
 
   return (
-  <>
-  {
-    elem.map((filmData) => {
-      <div className="movie-element">
-        {
-          Object.entries(filmData).map(([key, value]) => (
-            typeof value === 'string' && (<span>{key}</span>)
-          ))
-        }
-      </div>
-    })
-      
-  }
-  </>
+    <div className="watch-list-container">
+      <h1 className="watch-list-title">Watch Later List</h1>
+        <div className="movie-container">
+          {watchList ? watchList.map((movie) => (
+              <div className="movie-element">
+              <img src={movie.Poster !== 'N/A' ? movie.Poster : 'https://www.2queue.com/wp-content/uploads/tdomf/4299/movie-poster-coming-soon.png'} alt="" />
+              <div>
+                    <div className='title'>
+                      {movie.Title}
+                    </div>   
+                    <div className='movie-describe'>
+                      <div>
+                        <p>{movie.Year}</p>
+                        <p>{movie.Type}</p>
+                      </div>
+                      <i imdbID={movie.imdbID} className={`far fa-clock fa-2x`}></i>
+                    </div>
+                  </div>
+            </div>
+            ))
+            :
+            <h2>You don`t have the films in  a Watch Later List</h2> }
+        </div>
+    </div>
   )
 }
 
