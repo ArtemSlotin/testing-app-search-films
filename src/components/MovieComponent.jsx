@@ -8,25 +8,10 @@ const MovieComponent = (props) => {
   const {id} = useParams();
   const [toggle] = useState('fas');
   const watchList = [];
-  const [addToWatchList, setAddToWatchList] = useState(false);
   const [selectItem, setSelectItem] = useState();
   const [detailItem, setDetailItem] = useState([]);
-  const arr = []
-
-  // function filmsData (){
-  //   watchList.map((id) => {
-  //     axios.get(`http://www.omdbapi.com/?_&i=${id}&apikey=3d3fe426`)
-  //     .then((result) => {
-  //       arr.push(result.data)
-  //       console.log(arr);
-  //     })
-  //   })
-  // } 
-
  
   function addToList (props) {
-    alert(JSON.stringify(props))
-    alert(!watchList.includes(props))
     if(!watchList.includes(props)) {
       watchList.push(props)
     } else if (watchList.includes(props)) {
@@ -44,10 +29,6 @@ const MovieComponent = (props) => {
     // }  
   }
 
-  useEffect(() => {
-   
-
-  }, [arr])
 
   function handleClickLink(elem) {
     setSelectItem(elem);
