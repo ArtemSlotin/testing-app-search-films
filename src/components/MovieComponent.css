@@ -23,6 +23,15 @@ p {
 
 .movie-describe {
   display: flex;
+  justify-content:space-around  ;
+}
+
+.watch_later path:hover {
+  fill:grey !important;
+}
+
+.watch_later .active {
+  fill:rgb(167, 3, 3) !important;
 }
 
 .fa-clock {

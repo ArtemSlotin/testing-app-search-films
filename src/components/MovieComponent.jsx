@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link, useParams  } from 'react-router-dom';
 import axios from 'axios';
 import '../components/MovieComponent.css';
+import {ReactComponent as WatchLaterSvg } from '../img/watch-later30_40.svg';
+const watchListClassName = document.querySelectorAll('watch_later');
 
 
 const MovieComponent = (props) => {
@@ -17,16 +19,19 @@ const MovieComponent = (props) => {
     } else if (watchList.includes(props)) {
       watchList.pop(props)
     }
-    console.log(watchList)
+    // const watchListClassName = document.querySelectorAll('watch_later').classList.add('active')
+    console.log(watchListClassName)
+
+
+    // if (WatchLaterSvg.style.fill == "rgb(0%,0%,0%)") {
+    //   WatchLaterSvg.style.fill = "rgb(0%,0%,100%)";
+    // }
+    // else {
+    //   WatchLaterSvg.style.fill = "rgb(29, 172, 249)";
+    // }
+
+
     localStorage.setItem('filmsData', JSON.stringify(watchList))
-
-
-    
-    // if(event.target.className == 'far fa-clock fa-2x') {
-    //   event.target.className ='fas fa-clock fa-2x';
-    // } else {
-    //   event.target.className ='far fa-clock fa-2x';
-    // }  
   }
 
 
@@ -61,7 +66,7 @@ const MovieComponent = (props) => {
                 <p>{elem.Year}</p>
                 <p>{elem.Type}</p>
               </div>
-              <i onClick={()=> addToList(elem)} imdbID={elem.imdbID} className={`${toggle == 'far' ? 'fas' : 'far'} fa-clock fa-2x`}></i>
+              <WatchLaterSvg className='watch_later' onClick={()=> addToList(elem)} imdbID={elem.imdbID}/>
             </div>
           </div>
         </div>
